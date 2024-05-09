@@ -1,3 +1,6 @@
+
+import java.awt.Dimension;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
@@ -12,8 +15,12 @@ public class preguntas extends javax.swing.JPanel {
     /**
      * Creates new form preguntas
      */
+    
     public preguntas() {
         initComponents();
+        
+        Dimension dimension = new Dimension(335,195);
+        utilidades.SetImageLabel(fondo, "src/imagenes/Panel_Principal.png", dimension); 
     }
     
 
@@ -30,11 +37,14 @@ public class preguntas extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         pregunta = new javax.swing.JLabel();
         menos = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 0, 0));
         jPanel1.setForeground(new java.awt.Color(5, 19, 36));
+        jPanel1.setMaximumSize(new java.awt.Dimension(340, 370));
+        jPanel1.setMinimumSize(new java.awt.Dimension(340, 370));
         jPanel1.setOpaque(false);
+        jPanel1.setPreferredSize(new java.awt.Dimension(340, 370));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pregunta.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
@@ -50,9 +60,10 @@ public class preguntas extends javax.swing.JPanel {
         menos.setPreferredSize(new java.awt.Dimension(30, 30));
         jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, 20));
 
-        jLabel1.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Panel_Principal.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondo.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
+        fondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Panel_Principal.png"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -68,7 +79,7 @@ public class preguntas extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel fondo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel menos;
     private javax.swing.JLabel pregunta;

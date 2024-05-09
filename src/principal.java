@@ -1,3 +1,6 @@
+
+import java.awt.BorderLayout;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,6 +17,15 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
+        
+        preguntas preg = new preguntas();
+        preg.setSize(340, 662);
+        preg.setLocation(0,0);
+        
+        content.removeAll();
+        content.add(preg, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
         
         utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
         utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
@@ -37,85 +49,68 @@ public class principal extends javax.swing.JFrame {
         añadir = new javax.swing.JLabel();
         mas = new javax.swing.JLabel();
         info = new javax.swing.JLabel();
+        creartxt = new javax.swing.JLabel();
         crear = new javax.swing.JLabel();
+        content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(5, 19, 36));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titulo.setBackground(new java.awt.Color(247, 247, 247));
         titulo.setFont(new java.awt.Font("Raleway Medium", 0, 24)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titulo.setText("Crea tu simulador teórico");
+        jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 6, -1, -1));
 
         desplegable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Desplegable_Off.png"))); // NOI18N
         desplegable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(desplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 87, 343, 39));
 
         tipo.setBackground(new java.awt.Color(247, 247, 247));
         tipo.setFont(new java.awt.Font("Raleway Medium", 0, 14)); // NOI18N
         tipo.setForeground(new java.awt.Color(247, 247, 247));
         tipo.setText("Añadir una pregunta");
+        jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 138, -1, -1));
 
         añadir.setBackground(new java.awt.Color(247, 247, 247));
         añadir.setFont(new java.awt.Font("Raleway Medium", 0, 14)); // NOI18N
         añadir.setForeground(new java.awt.Color(247, 247, 247));
         añadir.setText("Tipo de Simulador");
+        jPanel1.add(añadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 56, -1, -1));
 
         mas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mas_Off.png"))); // NOI18N
         mas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(mas, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 143, 14, 14));
 
         info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Info_Off.png"))); // NOI18N
         info.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 143, 14, 14));
+
+        creartxt.setFont(titulo.getFont());
+        creartxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        creartxt.setText("Crear");
+        jPanel1.add(creartxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 860, -1, -1));
 
         crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cilindrico_Off.png"))); // NOI18N
         crear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 843, 340, 50));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(82, 82, 82))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(desplegable, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(crear, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(tipo)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(mas, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(3, 3, 3)))
-                    .addComponent(añadir))
-                .addGap(43, 43, 43))
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titulo)
-                .addGap(18, 18, 18)
-                .addComponent(añadir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(desplegable, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tipo)
-                    .addComponent(mas, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 686, Short.MAX_VALUE)
-                .addComponent(crear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 662, Short.MAX_VALUE)
         );
+
+        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 930));
 
@@ -159,7 +154,9 @@ public class principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel añadir;
+    private javax.swing.JPanel content;
     private javax.swing.JLabel crear;
+    private javax.swing.JLabel creartxt;
     private javax.swing.JLabel desplegable;
     private javax.swing.JLabel info;
     private javax.swing.JPanel jPanel1;

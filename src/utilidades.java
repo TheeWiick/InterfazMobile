@@ -1,4 +1,5 @@
 
+import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -20,4 +21,10 @@ public class utilidades {
         labelName.setIcon(icon);
         labelName.repaint();
     }
+public static void SetImageLabel(JLabel labelName, String root, Dimension dimension){
+            ImageIcon image = new ImageIcon(root);
+            Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth()+ dimension.width, labelName.getHeight()+ dimension.height, Image.SCALE_SMOOTH));
+            labelName.setIcon(icon);
+            labelName.repaint();
+        }
 }

@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Dimension;
 
 /*
@@ -19,8 +20,13 @@ public class preguntas extends javax.swing.JPanel {
     public preguntas() {
         initComponents();
         
+        pregunta.setBorder(new RoundBorder(10, Color.GRAY));
+        respuesta0.setBorder(new RoundBorder(10, Color.GRAY));
         Dimension dimension = new Dimension(335,195);
         utilidades.SetImageLabel(fondo, "src/imagenes/Panel_Principal.png", dimension); 
+        
+        Dimension dimensionmenos = new Dimension(10,10);
+        utilidades.SetImageLabel(menos, "src/imagenes/Menos_Off.png", dimensionmenos);
     }
     
 
@@ -35,8 +41,11 @@ public class preguntas extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        pregunta = new javax.swing.JLabel();
+        pregunta = new javax.swing.JTextField();
+        respuesta0 = new javax.swing.JTextField();
+        respuestacorrecta = new javax.swing.JLabel();
         menos = new javax.swing.JLabel();
+        preguntatxt = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(5, 19, 36));
@@ -50,18 +59,41 @@ public class preguntas extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(340, 370));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pregunta.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
-        pregunta.setForeground(new java.awt.Color(255, 255, 255));
-        pregunta.setText("Pregunta");
-        jPanel1.add(pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        pregunta.setBackground(new java.awt.Color(72, 82, 93));
+        pregunta.setForeground(new java.awt.Color(247, 247, 247));
+        pregunta.setToolTipText("");
+        pregunta.setBorder(null);
+        pregunta.setMaximumSize(new java.awt.Dimension(310, 30));
+        pregunta.setMinimumSize(new java.awt.Dimension(310, 30));
+        pregunta.setName(""); // NOI18N
+        pregunta.setOpaque(true);
+        pregunta.setPreferredSize(new java.awt.Dimension(310, 30));
+        jPanel1.add(pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 310, 30));
+
+        respuesta0.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta0.setForeground(new java.awt.Color(247, 247, 247));
+        respuesta0.setToolTipText("Escribe una pregunta");
+        respuesta0.setBorder(null);
+        respuesta0.setMaximumSize(new java.awt.Dimension(60, 20));
+        respuesta0.setMinimumSize(new java.awt.Dimension(60, 20));
+        respuesta0.setName(""); // NOI18N
+        respuesta0.setOpaque(true);
+        jPanel1.add(respuesta0, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 310, 30));
+
+        respuestacorrecta.setBackground(new java.awt.Color(247, 247, 247));
+        respuestacorrecta.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
+        respuestacorrecta.setForeground(new java.awt.Color(247, 247, 247));
+        respuestacorrecta.setText("Respuesta correcta");
+        jPanel1.add(respuestacorrecta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 53, -1, -1));
 
         menos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menos_Off.png"))); // NOI18N
-        menos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        menos.setMaximumSize(new java.awt.Dimension(30, 30));
-        menos.setMinimumSize(new java.awt.Dimension(30, 30));
-        menos.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, 20));
+        jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 10, 10, 10));
+
+        preguntatxt.setBackground(new java.awt.Color(247, 247, 247));
+        preguntatxt.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
+        preguntatxt.setForeground(new java.awt.Color(247, 247, 247));
+        preguntatxt.setText("Pregunta");
+        jPanel1.add(preguntatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 10, -1, -1));
 
         fondo.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         fondo.setForeground(new java.awt.Color(60, 63, 65));
@@ -86,6 +118,9 @@ public class preguntas extends javax.swing.JPanel {
     private javax.swing.JLabel fondo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel menos;
-    private javax.swing.JLabel pregunta;
+    private javax.swing.JTextField pregunta;
+    private javax.swing.JLabel preguntatxt;
+    private javax.swing.JTextField respuesta0;
+    private javax.swing.JLabel respuestacorrecta;
     // End of variables declaration//GEN-END:variables
 }

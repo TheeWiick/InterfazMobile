@@ -15,7 +15,9 @@ public class preguntas extends javax.swing.JPanel {
     public preguntas() {
         initComponents();
     }
+    
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,7 +29,7 @@ public class preguntas extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         pregunta = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        menos = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 0, 0));
@@ -40,13 +42,13 @@ public class preguntas extends javax.swing.JPanel {
         pregunta.setText("Pregunta");
         jPanel1.add(pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menos_Off.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel2.setMaximumSize(new java.awt.Dimension(30, 30));
-        jLabel2.setMinimumSize(new java.awt.Dimension(30, 30));
-        jLabel2.setPreferredSize(new java.awt.Dimension(30, 30));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 40, 40));
+        menos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menos_Off.png"))); // NOI18N
+        menos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menos.setMaximumSize(new java.awt.Dimension(30, 30));
+        menos.setMinimumSize(new java.awt.Dimension(30, 30));
+        menos.setPreferredSize(new java.awt.Dimension(30, 30));
+        jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, 20));
 
         jLabel1.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Panel_Principal.png"))); // NOI18N
@@ -67,8 +69,8 @@ public class preguntas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel menos;
     private javax.swing.JLabel pregunta;
     // End of variables declaration//GEN-END:variables
 }

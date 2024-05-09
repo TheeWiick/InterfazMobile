@@ -14,6 +14,11 @@ public class principal extends javax.swing.JFrame {
      */
     public principal() {
         initComponents();
+        
+        utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
+        utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
+        utilidades.SetImageLabel(info, "src/imagenes/Info_Off.png");
+        utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");        
     }
 
     /**
@@ -26,34 +31,90 @@ public class principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        titulo = new javax.swing.JLabel();
+        desplegable = new javax.swing.JLabel();
+        tipo = new javax.swing.JLabel();
+        añadir = new javax.swing.JLabel();
+        mas = new javax.swing.JLabel();
+        info = new javax.swing.JLabel();
+        crear = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(5, 19, 36));
 
-        jLabel1.setBackground(new java.awt.Color(247, 247, 247));
-        jLabel1.setFont(new java.awt.Font("Raleway Medium", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Crea tu simulador teórico");
+        titulo.setBackground(new java.awt.Color(247, 247, 247));
+        titulo.setFont(new java.awt.Font("Raleway Medium", 0, 24)); // NOI18N
+        titulo.setForeground(new java.awt.Color(255, 255, 255));
+        titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titulo.setText("Crea tu simulador teórico");
+
+        desplegable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Desplegable_Off.png"))); // NOI18N
+        desplegable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        tipo.setBackground(new java.awt.Color(247, 247, 247));
+        tipo.setFont(new java.awt.Font("Raleway Medium", 0, 14)); // NOI18N
+        tipo.setForeground(new java.awt.Color(247, 247, 247));
+        tipo.setText("Añadir una pregunta");
+
+        añadir.setBackground(new java.awt.Color(247, 247, 247));
+        añadir.setFont(new java.awt.Font("Raleway Medium", 0, 14)); // NOI18N
+        añadir.setForeground(new java.awt.Color(247, 247, 247));
+        añadir.setText("Tipo de Simulador");
+
+        mas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mas_Off.png"))); // NOI18N
+        mas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Info_Off.png"))); // NOI18N
+        info.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cilindrico_Off.png"))); // NOI18N
+        crear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(82, 82, 82))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(desplegable, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(crear, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(tipo)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(mas, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(3, 3, 3)))
+                    .addComponent(añadir))
+                .addGap(43, 43, 43))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(892, Short.MAX_VALUE))
+                .addComponent(titulo)
+                .addGap(18, 18, 18)
+                .addComponent(añadir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(desplegable, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tipo)
+                    .addComponent(mas, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 686, Short.MAX_VALUE)
+                .addComponent(crear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 930));
@@ -97,7 +158,13 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel añadir;
+    private javax.swing.JLabel crear;
+    private javax.swing.JLabel desplegable;
+    private javax.swing.JLabel info;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel mas;
+    private javax.swing.JLabel tipo;
+    private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }

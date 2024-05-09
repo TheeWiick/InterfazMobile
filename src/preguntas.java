@@ -39,7 +39,10 @@ public class preguntas extends javax.swing.JPanel {
         menos = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(255, 0, 0));
+        setBackground(new java.awt.Color(5, 19, 36));
+        setForeground(new java.awt.Color(5, 19, 36));
+
+        jPanel1.setBackground(new java.awt.Color(5, 19, 36));
         jPanel1.setForeground(new java.awt.Color(5, 19, 36));
         jPanel1.setMaximumSize(new java.awt.Dimension(340, 370));
         jPanel1.setMinimumSize(new java.awt.Dimension(340, 370));
@@ -61,6 +64,7 @@ public class preguntas extends javax.swing.JPanel {
         jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 10, 20, 20));
 
         fondo.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
+        fondo.setForeground(new java.awt.Color(60, 63, 65));
         fondo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Panel_Principal.png"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 200));
@@ -73,7 +77,7 @@ public class preguntas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

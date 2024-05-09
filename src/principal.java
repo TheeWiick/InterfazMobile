@@ -54,9 +54,9 @@ public class principal extends javax.swing.JFrame {
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(5, 19, 36));
+        jPanel1.setForeground(new java.awt.Color(60, 63, 65));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titulo.setBackground(new java.awt.Color(247, 247, 247));
@@ -93,11 +93,14 @@ public class principal extends javax.swing.JFrame {
         creartxt.setFont(titulo.getFont());
         creartxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         creartxt.setText("Crear");
-        jPanel1.add(creartxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 860, -1, -1));
+        jPanel1.add(creartxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 850, -1, -1));
 
         crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cilindrico_Off.png"))); // NOI18N
         crear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 843, 340, 50));
+
+        content.setBackground(new java.awt.Color(5, 19, 36));
+        content.setForeground(new java.awt.Color(60, 63, 65));
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
@@ -107,12 +110,21 @@ public class principal extends javax.swing.JFrame {
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 662, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
 
-        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 340, 650));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 930));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

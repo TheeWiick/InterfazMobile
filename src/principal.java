@@ -35,6 +35,7 @@ public class principal extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(247, 247, 247));
         jLabel1.setFont(new java.awt.Font("Raleway Medium", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Crea tu simulador teórico");
 
@@ -52,7 +53,7 @@ public class principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(895, Short.MAX_VALUE))
+                .addContainerGap(892, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 930));

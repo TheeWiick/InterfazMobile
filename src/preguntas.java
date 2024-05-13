@@ -1,4 +1,3 @@
-
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -19,8 +18,7 @@ public class preguntas extends javax.swing.JPanel {
     
     public preguntas() {
         initComponents();
-        
-        
+
         Dimension dimension = new Dimension(335,195);
         utilidades.SetImageLabel(fondo, "src/imagenes/Panel_Principal.png", dimension); 
         
@@ -41,10 +39,15 @@ public class preguntas extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         pregunta = new javax.swing.JTextField();
+        preguntapanel = new Utilidades.RPanel();
         respuesta0 = new javax.swing.JTextField();
+        respuesta0panel = new Utilidades.RPanel();
         respuesta1 = new javax.swing.JTextField();
+        respuesta1panel = new Utilidades.RPanel();
         respuesta2 = new javax.swing.JTextField();
+        respuesta2panel = new Utilidades.RPanel();
         respuesta3 = new javax.swing.JTextField();
+        respuesta3panel = new Utilidades.RPanel();
         jLabel1 = new javax.swing.JLabel();
         respuestacorrecta = new javax.swing.JLabel();
         menos = new javax.swing.JLabel();
@@ -63,35 +66,138 @@ public class preguntas extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pregunta.setBackground(new java.awt.Color(72, 82, 93));
+        pregunta.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         pregunta.setForeground(new java.awt.Color(247, 247, 247));
         pregunta.setToolTipText("");
-        pregunta.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pregunta.setBorder(null);
         pregunta.setMaximumSize(new java.awt.Dimension(310, 30));
         pregunta.setMinimumSize(new java.awt.Dimension(310, 30));
         pregunta.setName(""); // NOI18N
-        pregunta.setOpaque(true);
         pregunta.setPreferredSize(new java.awt.Dimension(310, 30));
-        jPanel1.add(pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 310, 30));
+        jPanel1.add(pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 300, 30));
+
+        preguntapanel.setBackground(new java.awt.Color(72, 82, 93));
+        preguntapanel.setMaximumSize(new java.awt.Dimension(310, 30));
+        preguntapanel.setMinimumSize(new java.awt.Dimension(310, 30));
+        preguntapanel.setRadius(15);
+        preguntapanel.setStroke(0);
+
+        javax.swing.GroupLayout preguntapanelLayout = new javax.swing.GroupLayout(preguntapanel);
+        preguntapanel.setLayout(preguntapanelLayout);
+        preguntapanelLayout.setHorizontalGroup(
+            preguntapanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+        preguntapanelLayout.setVerticalGroup(
+            preguntapanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(preguntapanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 310, 30));
 
         respuesta0.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta0.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         respuesta0.setForeground(new java.awt.Color(247, 247, 247));
-        respuesta0.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(respuesta0, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 310, 20));
+        respuesta0.setBorder(null);
+        respuesta0.setMaximumSize(new java.awt.Dimension(64, 20));
+        respuesta0.setMinimumSize(new java.awt.Dimension(64, 20));
+        respuesta0.setPreferredSize(new java.awt.Dimension(64, 20));
+        jPanel1.add(respuesta0, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 300, 20));
+
+        respuesta0panel.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta0panel.setMaximumSize(new java.awt.Dimension(64, 20));
+        respuesta0panel.setMinimumSize(new java.awt.Dimension(64, 20));
+        respuesta0panel.setPreferredSize(new java.awt.Dimension(64, 20));
+        respuesta0panel.setRadius(15);
+        respuesta0panel.setStroke(0);
+
+        javax.swing.GroupLayout respuesta0panelLayout = new javax.swing.GroupLayout(respuesta0panel);
+        respuesta0panel.setLayout(respuesta0panelLayout);
+        respuesta0panelLayout.setHorizontalGroup(
+            respuesta0panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+        respuesta0panelLayout.setVerticalGroup(
+            respuesta0panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(respuesta0panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 310, 20));
 
         respuesta1.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta1.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         respuesta1.setForeground(new java.awt.Color(247, 247, 247));
-        respuesta1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(respuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 116, 310, 20));
+        respuesta1.setBorder(null);
+        jPanel1.add(respuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 116, 300, 20));
+
+        respuesta1panel.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta1panel.setMaximumSize(new java.awt.Dimension(64, 20));
+        respuesta1panel.setMinimumSize(new java.awt.Dimension(64, 20));
+        respuesta1panel.setRadius(15);
+        respuesta1panel.setStroke(0);
+
+        javax.swing.GroupLayout respuesta1panelLayout = new javax.swing.GroupLayout(respuesta1panel);
+        respuesta1panel.setLayout(respuesta1panelLayout);
+        respuesta1panelLayout.setHorizontalGroup(
+            respuesta1panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+        respuesta1panelLayout.setVerticalGroup(
+            respuesta1panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(respuesta1panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 115, 310, 20));
 
         respuesta2.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta2.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         respuesta2.setForeground(new java.awt.Color(247, 247, 247));
-        respuesta2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(respuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 143, 310, 20));
+        respuesta2.setBorder(null);
+        jPanel1.add(respuesta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 142, 300, 20));
+
+        respuesta2panel.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta2panel.setMaximumSize(new java.awt.Dimension(64, 20));
+        respuesta2panel.setMinimumSize(new java.awt.Dimension(64, 20));
+        respuesta2panel.setRadius(15);
+        respuesta2panel.setStroke(0);
+
+        javax.swing.GroupLayout respuesta2panelLayout = new javax.swing.GroupLayout(respuesta2panel);
+        respuesta2panel.setLayout(respuesta2panelLayout);
+        respuesta2panelLayout.setHorizontalGroup(
+            respuesta2panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+        respuesta2panelLayout.setVerticalGroup(
+            respuesta2panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(respuesta2panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 142, 310, 20));
 
         respuesta3.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta3.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         respuesta3.setForeground(new java.awt.Color(247, 247, 247));
-        respuesta3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 310, 20));
+        respuesta3.setBorder(null);
+        jPanel1.add(respuesta3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 300, 20));
+
+        respuesta3panel.setBackground(new java.awt.Color(72, 82, 93));
+        respuesta3panel.setMaximumSize(new java.awt.Dimension(64, 20));
+        respuesta3panel.setMinimumSize(new java.awt.Dimension(64, 20));
+        respuesta3panel.setRadius(15);
+        respuesta3panel.setStroke(0);
+
+        javax.swing.GroupLayout respuesta3panelLayout = new javax.swing.GroupLayout(respuesta3panel);
+        respuesta3panel.setLayout(respuesta3panelLayout);
+        respuesta3panelLayout.setHorizontalGroup(
+            respuesta3panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+        respuesta3panelLayout.setVerticalGroup(
+            respuesta3panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(respuesta3panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 310, 20));
 
         jLabel1.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(247, 247, 247));
@@ -139,11 +245,16 @@ public class preguntas extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel menos;
     private javax.swing.JTextField pregunta;
+    private Utilidades.RPanel preguntapanel;
     private javax.swing.JLabel preguntatxt;
     private javax.swing.JTextField respuesta0;
+    private Utilidades.RPanel respuesta0panel;
     private javax.swing.JTextField respuesta1;
+    private Utilidades.RPanel respuesta1panel;
     private javax.swing.JTextField respuesta2;
+    private Utilidades.RPanel respuesta2panel;
     private javax.swing.JTextField respuesta3;
+    private Utilidades.RPanel respuesta3panel;
     private javax.swing.JLabel respuestacorrecta;
     // End of variables declaration//GEN-END:variables
 }

@@ -113,7 +113,7 @@ public class principal extends javax.swing.JFrame {
             .addGap(0, 650, Short.MAX_VALUE)
         );
 
-        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 340, 650));
+        jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 170, 340, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

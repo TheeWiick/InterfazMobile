@@ -1,4 +1,3 @@
-
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.BufferedReader;
@@ -6,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -38,33 +38,30 @@ import javax.swing.JLabel;
             try {
                 File file = new File("file.csv");
                 FileReader fileReader = new FileReader(file); // A stream that connects to the text file
-                BufferedReader bufferedReader = new BufferedReader(fileReader); // Connect the FileReader to the BufferedReader
-
-                String line;
-                while((line = bufferedReader.readLine()) != null) {
-                    System.out.println(line); // Display the file's contents on the screen, one line at a time
+                try (BufferedReader bufferedReader = new BufferedReader(fileReader) // Connect the FileReader to the BufferedReader
+                ) {
+                    String line;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        System.out.println(line); // Display the file's contents on the screen, one line at a time
                     }
-
-                bufferedReader.close(); // Close the stream
-          } catch (Exception e) {
-                e.printStackTrace();
+                    // Close the stream
+                }
+          } catch (IOException e) {
         }
     }
 
-//public static void WriteFile(){
-//try {
-//            File file = new File("file.txt");
-//            FileWriter fileReader = new FileWriter(file); // A stream that connects to the text file
-//            BufferedWriter bufferedWriter = new BufferedWriter(fileReader); // Connect the FileWriter to the BufferedWriter
-//
-//            for (String s : list) {
-//                bufferedWriter.write(s + "\n");
-//            }
-//
-//            bufferedWriter.close (); // Close the stream
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public static void writeFile(String texto) {
+        try {
+            File file = new File("src/file.csv");
+            FileWriter fileWriter = new FileWriter(file, true); // Append mode
+            try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+                bufferedWriter.write(texto); // Escribir el texto en el archivo
+                bufferedWriter.newLine(); // Nueva línea para el próximo texto
+            } // Escribir el texto en el archivo
+            
+            System.out.println("Texto guardado en file.csv.");
+        } catch (IOException e) {
+        }
+    }
 }
 

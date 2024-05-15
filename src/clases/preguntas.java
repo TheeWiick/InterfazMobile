@@ -1,5 +1,8 @@
-import java.awt.Color;
+package clases;
+
+
 import java.awt.Dimension;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,6 +14,26 @@ import java.awt.Dimension;
  * @author javi2
  */
 public class preguntas extends javax.swing.JPanel {
+
+    public String getPregunta() {
+        return pregunta.getText();
+    }
+
+    public String getRespuesta0() {
+        return respuesta0.getText();
+    }
+
+    public String getRespuesta1() {
+        return respuesta1.getText();
+    }
+
+    public String getRespuesta2() {
+        return respuesta2.getText();
+    }
+
+    public String getRespuesta3() {
+        return respuesta3.getText();
+    }
 
     /**
      * Creates new form preguntas
@@ -26,7 +49,6 @@ public class preguntas extends javax.swing.JPanel {
         utilidades.SetImageLabel(menos, "src/imagenes/Menos_Off.png", dimensionmenos);
     }
     
-
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -212,6 +234,11 @@ public class preguntas extends javax.swing.JPanel {
 
         menos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menos_Off.png"))); // NOI18N
         menos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menosMouseClicked(evt);
+            }
+        });
         jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 10, 10, 10));
 
         preguntatxt.setBackground(new java.awt.Color(247, 247, 247));
@@ -237,6 +264,10 @@ public class preguntas extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menosMouseClicked
+        
+    }//GEN-LAST:event_menosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

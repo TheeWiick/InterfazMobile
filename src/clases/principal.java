@@ -1,7 +1,8 @@
+package clases;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-
+import java.util.ArrayList;
+import javax.swing.JScrollPane;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,14 +13,28 @@ import java.awt.Color;
  * @author Wick
  */
 public class principal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form principal
-     */
+    public ArrayList <preguntas> preguntasLista = new ArrayList<>(); 
+    
+    
+    
     public principal() {
         initComponents();
         
+//        
+//        JScrollPane scrollPane = new JScrollPane(content);
+//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+//
+//        
+//        scrollPane.setSize(340, 662);
+//        scrollPane.setLocation(0, 0);
+//
+//        
+//        content.add(scrollPane, BorderLayout.CENTER);
+//        content.revalidate();
+//        content.repaint();        
+        
         preguntas preg = new preguntas();
+        preguntasLista.add(preg);
         preg.setSize(340, 662);
         preg.setLocation(0,0);
         
@@ -27,6 +42,15 @@ public class principal extends javax.swing.JFrame {
         content.add(preg, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
+//       
+//        preguntas preg2 = new preguntas();
+//        preguntasLista.add(preg2);
+//        preg2.setSize(340, 662);
+//        preg2.setLocation(0,0);
+//        
+//        content.add(preg2, BorderLayout.CENTER);
+//        content.revalidate();
+//        content.repaint();
         
         utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
         utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
@@ -46,8 +70,8 @@ public class principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         titulo = new javax.swing.JLabel();
         desplegable = new javax.swing.JLabel();
-        tipo = new javax.swing.JLabel();
         añadir = new javax.swing.JLabel();
+        tipo = new javax.swing.JLabel();
         mas = new javax.swing.JLabel();
         info = new javax.swing.JLabel();
         creartxt = new javax.swing.JLabel();
@@ -71,20 +95,25 @@ public class principal extends javax.swing.JFrame {
         desplegable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(desplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 87, 343, 39));
 
-        tipo.setBackground(new java.awt.Color(247, 247, 247));
-        tipo.setFont(new java.awt.Font("Raleway Medium", 0, 14)); // NOI18N
-        tipo.setForeground(new java.awt.Color(247, 247, 247));
-        tipo.setText("Añadir una pregunta");
-        jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 138, -1, -1));
-
         añadir.setBackground(new java.awt.Color(247, 247, 247));
         añadir.setFont(new java.awt.Font("Raleway Medium", 0, 14)); // NOI18N
         añadir.setForeground(new java.awt.Color(247, 247, 247));
-        añadir.setText("Tipo de Simulador");
-        jPanel1.add(añadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 56, -1, -1));
+        añadir.setText("Añadir una pregunta");
+        jPanel1.add(añadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 138, -1, -1));
+
+        tipo.setBackground(new java.awt.Color(247, 247, 247));
+        tipo.setFont(new java.awt.Font("Raleway Medium", 0, 14)); // NOI18N
+        tipo.setForeground(new java.awt.Color(247, 247, 247));
+        tipo.setText("Tipo de Simulador");
+        jPanel1.add(tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 56, -1, -1));
 
         mas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mas_Off.png"))); // NOI18N
         mas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                masMouseClicked(evt);
+            }
+        });
         jPanel1.add(mas, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 143, 14, 14));
 
         info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Info_Off.png"))); // NOI18N
@@ -100,6 +129,9 @@ public class principal extends javax.swing.JFrame {
         crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cilindrico_Off.png"))); // NOI18N
         crear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         crear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 crearMouseEntered(evt);
             }
@@ -111,18 +143,7 @@ public class principal extends javax.swing.JFrame {
 
         content.setBackground(new java.awt.Color(5, 19, 36));
         content.setForeground(new java.awt.Color(60, 63, 65));
-
-        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
-        content.setLayout(contentLayout);
-        contentLayout.setHorizontalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
-        );
-        contentLayout.setVerticalGroup(
-            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
-        );
-
+        content.setLayout(new java.awt.GridLayout(0, 1));
         jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 170, 340, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,6 +167,35 @@ public class principal extends javax.swing.JFrame {
     private void crearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearMouseExited
         utilidades.SetImageLabel(crear,"src/imagenes/Cilindrico_Off.png");
     }//GEN-LAST:event_crearMouseExited
+
+    private void crearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearMouseClicked
+    String pregunta = preguntasLista.get(0).getPregunta();
+    String respuesta0 = preguntasLista.get(0).getRespuesta0();
+    String respuesta1 = preguntasLista.get(0).getRespuesta1();
+    String respuesta2 = preguntasLista.get(0).getRespuesta2();
+    String respuesta3 = preguntasLista.get(0).getRespuesta3();
+
+    String[] datos = new String[5];
+    datos[0] = pregunta;
+    datos[1] = respuesta0;
+    datos[2] = respuesta1;
+    datos[3] = respuesta2;
+    datos[4] = respuesta3;
+
+    utilidades.writeFile("texto", datos);        
+    }//GEN-LAST:event_crearMouseClicked
+
+    private void masMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masMouseClicked
+    for(int i = 0; i < 10; i++){    
+        preguntas preg = new preguntas();
+        preguntasLista.add(preg);
+        preg.setSize(340, 662);
+        preg.setLocation(0,0);
+        content.add(preg, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint(); 
+    }
+    }//GEN-LAST:event_masMouseClicked
 
     /**
      * @param args the command line arguments

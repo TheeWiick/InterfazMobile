@@ -1,5 +1,6 @@
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -93,6 +94,12 @@ public class principal extends javax.swing.JFrame {
         creartxt.setFont(titulo.getFont());
         creartxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         creartxt.setText("Crear");
+        creartxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        creartxt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                creartxtMouseEntered(evt);
+            }
+        });
         jPanel1.add(creartxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 850, -1, -1));
 
         crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cilindrico_Off.png"))); // NOI18N
@@ -128,6 +135,10 @@ public class principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void creartxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_creartxtMouseEntered
+        creartxt.setBackground(new Color(242, 242, 242));
+    }//GEN-LAST:event_creartxtMouseEntered
 
     /**
      * @param args the command line arguments

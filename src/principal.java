@@ -104,6 +104,14 @@ public class principal extends javax.swing.JFrame {
 
         crear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cilindrico_Off.png"))); // NOI18N
         crear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        crear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                crearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                crearMouseExited(evt);
+            }
+        });
         jPanel1.add(crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 843, 340, 50));
 
         content.setBackground(new java.awt.Color(5, 19, 36));
@@ -137,8 +145,16 @@ public class principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void creartxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_creartxtMouseEntered
-        creartxt.setBackground(new Color(242, 242, 242));
+     
     }//GEN-LAST:event_creartxtMouseEntered
+
+    private void crearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearMouseEntered
+        utilidades.SetImageLabel(crear,"src/imagenes/Cilindrico_On.png");
+    }//GEN-LAST:event_crearMouseEntered
+
+    private void crearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearMouseExited
+        utilidades.SetImageLabel(crear,"src/imagenes/Cilindrico_Off.png");
+    }//GEN-LAST:event_crearMouseExited
 
     /**
      * @param args the command line arguments

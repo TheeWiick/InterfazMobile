@@ -1,12 +1,15 @@
 package clases;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
+import java.util.Arrays;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
 /**
  *
@@ -19,20 +22,7 @@ public class principal extends javax.swing.JFrame {
     
     public principal() {
         initComponents();
-        
-//        
-//        JScrollPane scrollPane = new JScrollPane(content);
-//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-//
-//        
-//        scrollPane.setSize(340, 662);
-//        scrollPane.setLocation(0, 0);
-//
-//        
-//        content.add(scrollPane, BorderLayout.CENTER);
-//        content.revalidate();
-//        content.repaint();        
-        
+
         preguntas preg = new preguntas();
         preguntasLista.add(preg);
         preg.setSize(340, 662);
@@ -42,15 +32,6 @@ public class principal extends javax.swing.JFrame {
         content.add(preg, BorderLayout.CENTER);
         content.revalidate();
         content.repaint();
-//       
-//        preguntas preg2 = new preguntas();
-//        preguntasLista.add(preg2);
-//        preg2.setSize(340, 662);
-//        preg2.setLocation(0,0);
-//        
-//        content.add(preg2, BorderLayout.CENTER);
-//        content.revalidate();
-//        content.repaint();
         
         utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
         utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
@@ -143,7 +124,6 @@ public class principal extends javax.swing.JFrame {
 
         content.setBackground(new java.awt.Color(5, 19, 36));
         content.setForeground(new java.awt.Color(60, 63, 65));
-        content.setLayout(new java.awt.GridLayout(0, 1));
         jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 170, 340, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,19 +162,12 @@ public class principal extends javax.swing.JFrame {
     datos[3] = respuesta2;
     datos[4] = respuesta3;
 
-    utilidades.writeFile("texto", datos);        
+    utilidades.writeFile("texto", datos);
+    System.out.println(Arrays.toString(datos));
     }//GEN-LAST:event_crearMouseClicked
-
+ 
     private void masMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masMouseClicked
-    for(int i = 0; i < 10; i++){    
-        preguntas preg = new preguntas();
-        preguntasLista.add(preg);
-        preg.setSize(340, 662);
-        preg.setLocation(0,0);
-        content.add(preg, BorderLayout.CENTER);
-        content.revalidate();
-        content.repaint(); 
-    }
+
     }//GEN-LAST:event_masMouseClicked
 
     /**

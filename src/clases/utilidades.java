@@ -8,6 +8,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import com.opencsv.CSVWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -32,22 +34,6 @@ import com.opencsv.CSVWriter;
                 labelName.repaint();
             }
 
-//    public static void ReadFile() {
-//            try {
-//                File file = new File("file.csv");
-//                FileReader fileReader = new FileReader(file); // A stream that connects to the text file
-//                try (BufferedReader bufferedReader = new BufferedReader(fileReader) // Connect the FileReader to the BufferedReader
-//                ) {
-//                    String line;
-//                    while ((line = bufferedReader.readLine()) != null) {
-//                        System.out.println(line); // Display the file's contents on the screen, one line at a time
-//                    }
-//                    // Close the stream
-//                }
-//          } catch (IOException e) {
-//        }
-//    }
-
     public static void writeFile(String texto, String[] datos) {
         try {
             FileWriter writer = new FileWriter("src/archivoscsv/archivo.csv", true); 
@@ -58,5 +44,11 @@ import com.opencsv.CSVWriter;
         } catch (IOException e) {
         }
     }
+//public String writeAllLines() throws Exception {
+//    Path path = Paths.get(
+//      ClassLoader.getSystemResource("src/archivoscsv/archivo.csv").toURI()
+//    ); 
+//    return utilidades.writeAllLines(Helpers.fourColumnCsvString(), path);
+//}    
 }
 

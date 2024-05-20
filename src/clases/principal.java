@@ -1,14 +1,8 @@
 package clases;
 
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -18,27 +12,7 @@ public class principal extends javax.swing.JFrame {
     
     
     public principal() {
-        initComponents();
-
-        preguntas preg = new preguntas();
-        preguntasLista.add(preg);
-        preg.setSize(340, 662);
-        preg.setLocation(0,0);
-        
-        content.removeAll();
-        content.add(preg);
-        content.revalidate();
-        content.repaint();
-        
-        preguntas preg2 = new preguntas();
-        preguntasLista.add(preg2);
-        preg2.setSize(340, 662);
-        preg2.setLocation(0,0);
-        
-
-        content.add(preg2);
-        content.revalidate();
-        content.repaint();        
+        initComponents();       
         
         utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
         utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");

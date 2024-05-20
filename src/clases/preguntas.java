@@ -1,7 +1,5 @@
 package clases;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import javax.swing.JPanel;
 
 public class preguntas extends javax.swing.JPanel {
 

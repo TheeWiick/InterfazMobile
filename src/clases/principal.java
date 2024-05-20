@@ -3,8 +3,13 @@ package clases;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 public class principal extends javax.swing.JFrame {
@@ -147,21 +152,35 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_crearMouseExited
 
     private void crearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearMouseClicked
-    String pregunta = preguntasLista.get(0).getPregunta();
-    String respuesta0 = preguntasLista.get(0).getRespuesta0();
-    String respuesta1 = preguntasLista.get(0).getRespuesta1();
-    String respuesta2 = preguntasLista.get(0).getRespuesta2();
-    String respuesta3 = preguntasLista.get(0).getRespuesta3();
+    
+       try {
+    FileWriter writer = new FileWriter("src/archivoscsv/archivo.csv");
 
-    String[] datos = new String[5];
-    datos[0] = pregunta;
-    datos[1] = respuesta0;
-    datos[2] = respuesta1;
-    datos[3] = respuesta2;
-    datos[4] = respuesta3;
+    for (int i = 0; i < preguntasLista.size(); i++) {
+        writer.append(String.format("%s,%s,%s,%s,%s\n",
+                preguntasLista.get(i).getPregunta(),
+                preguntasLista.get(i).getRespuesta0(),
+                preguntasLista.get(i).getRespuesta1(),
+                preguntasLista.get(i).getRespuesta2(),
+                preguntasLista.get(i).getRespuesta3()
+        ));
 
-    utilidades.writeFile("texto", datos);
-    System.out.println(Arrays.toString(datos));
+        // Imprimir el contenido en la salida
+        System.out.println(String.format("%s,%s,%s,%s,%s\n",
+                preguntasLista.get(i).getPregunta(),
+                preguntasLista.get(i).getRespuesta0(),
+                preguntasLista.get(i).getRespuesta1(),
+                preguntasLista.get(i).getRespuesta2(),
+                preguntasLista.get(i).getRespuesta3()
+        ));
+    }
+
+    writer.close();
+
+    JOptionPane.showMessageDialog(this, "Archivo CSV creado con éxito.");
+} catch (IOException e) {
+    JOptionPane.showMessageDialog(this, "Error al crear el archivo CSV: " + e.getMessage());
+}
     }//GEN-LAST:event_crearMouseClicked
  
     private void masMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masMouseClicked

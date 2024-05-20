@@ -50,5 +50,29 @@ import java.nio.file.Paths;
 //    ); 
 //    return utilidades.writeAllLines(Helpers.fourColumnCsvString(), path);
 //}    
-}
 
+
+//////    private void crearArchivoCSV() {
+//////        try (FileWriter writer = new FileWriter("preguntas.csv")) {
+//////            writer.append("Pregunta,Opción 1,Opción 2,Opción 3,Opción 4,Respuesta correcta\n");
+//////            for (preguntas panel : preguntas) {
+//////                String pregunta = panel.getPregunta();
+//////                String[] opciones = panel.getOpciones();
+//////                int respuestaCorrecta = panel.getRespuestaCorrecta();
+//////                writer.append(String.format("%s,%s,%s,%s,%s,%d\n",
+//////                        pregunta,
+//////                        opciones[0],
+//////                        opciones[1],
+//////                        opciones[2],
+//////                        opciones[3],
+//////                        respuestaCorrecta + 1 // Ajustar índice para que sea 1-based en lugar de 0-based
+//////                ));
+//////            }
+//////            JOptionPane.showMessageDialog(this, "Archivo CSV creado con éxito.");
+//////        } catch (IOException e) {
+//////            JOptionPane.showMessageDialog(this, "Error al crear el archivo CSV: " + e.getMessage());
+//////        }
+//////    }
+//////    
+    }
+    

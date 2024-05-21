@@ -8,6 +8,14 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import com.opencsv.CSVWriter;
+import java.awt.BorderLayout;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 
     public class utilidades {
@@ -34,6 +42,36 @@ import com.opencsv.CSVWriter;
             System.out.println("Datos guardados exitosamente en el archivo CSV.");
         } catch (IOException e) {
         }
-    }   
+    }
+    public static void readFile(String[] args) {
+	try {
+            FileReader fileReader = new FileReader("src/archivoscsv/archivo.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            
+            String line;
+            while((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+		bufferedReader.close();
+            } catch (IOException e) {
+        }
+    }
+    public JPanel content;
+    public void ScrollPane() {
+ 
+        content = new JPanel();
+        content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
+        
+        content.setPreferredSize(new Dimension(340, 650));
+        content.setMaximumSize(new Dimension(340, 650));
+
+        JScrollPane scrollPane = new JScrollPane(content);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+        content.add(scrollPane, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }    
 }
     

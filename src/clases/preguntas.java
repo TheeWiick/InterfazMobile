@@ -3,6 +3,41 @@ import java.awt.Dimension;
 
 public class preguntas extends javax.swing.JPanel {
 
+    /**
+     * @param pregunta the pregunta to set
+     */
+    public void setPregunta(javax.swing.JTextField pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    /**
+     * @param respuesta0 the respuesta0 to set
+     */
+    public void setRespuesta0(javax.swing.JTextField respuesta0) {
+        this.respuesta0 = respuesta0;
+    }
+
+    /**
+     * @param respuesta1 the respuesta1 to set
+     */
+    public void setRespuesta1(javax.swing.JTextField respuesta1) {
+        this.respuesta1 = respuesta1;
+    }
+
+    /**
+     * @param respuesta2 the respuesta2 to set
+     */
+    public void setRespuesta2(javax.swing.JTextField respuesta2) {
+        this.respuesta2 = respuesta2;
+    }
+
+    /**
+     * @param respuesta3 the respuesta3 to set
+     */
+    public void setRespuesta3(javax.swing.JTextField respuesta3) {
+        this.respuesta3 = respuesta3;
+    }
+
     public String getPregunta() {
         return pregunta.getText();
     }

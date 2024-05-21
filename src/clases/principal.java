@@ -1,9 +1,12 @@
 package clases;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 public class principal extends javax.swing.JFrame {
@@ -17,10 +20,40 @@ public class principal extends javax.swing.JFrame {
         utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
         utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
         utilidades.SetImageLabel(info, "src/imagenes/Info_Off.png");
-        utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");        
+        utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");    
     }
 
 
+    public void generarPaneles(JTextField[] textFields) {
+        String archivoCSV = "src/archivoscsv/archivo.csv";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(archivoCSV))) {
+            String line;
+            int indice = 0;
+            while ((line = br.readLine()) != null && indice < textFields.length) {
+                String[] datos = line.split(",");
+                preguntas preg = new preguntas();
+//                preg.setPregunta(pregunta);
+                preguntasLista.add(preg);
+                preg.setSize(340, 662);
+                preg.setLocation(0,0);
+
+                content.add(preg);
+                content.revalidate();
+                content.repaint(); 
+                if (datos.length >= 4) {
+                    textFields[indice].setText(datos[0]);
+                    textFields[indice + 1].setText(datos[1]);
+                    textFields[indice + 2].setText(datos[2]);
+                    textFields[indice + 3].setText(datos[3]);
+                    textFields[indice + 4].setText(datos[4]);
+                    indice += 5;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }    
+    }  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -101,6 +134,9 @@ public class principal extends javax.swing.JFrame {
 
         content.setBackground(new java.awt.Color(5, 19, 36));
         content.setForeground(new java.awt.Color(60, 63, 65));
+        content.setMaximumSize(new java.awt.Dimension(340, 650));
+        content.setMinimumSize(new java.awt.Dimension(340, 650));
+        content.setLayout(new javax.swing.BoxLayout(content, javax.swing.BoxLayout.Y_AXIS));
         jPanel1.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 170, 340, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -139,7 +175,6 @@ public class principal extends javax.swing.JFrame {
                 preguntasLista.get(i).getRespuesta3()
         ));
 
-        // Imprimir el contenido en la salida
         System.out.println(String.format("%s,%s,%s,%s,%s\n",
                 preguntasLista.get(i).getPregunta(),
                 preguntasLista.get(i).getRespuesta0(),
@@ -159,13 +194,13 @@ public class principal extends javax.swing.JFrame {
  
     private void masMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masMouseClicked
 
-        preguntas preg2 = new preguntas();
-        preguntasLista.add(preg2);
-        preg2.setSize(340, 662);
-        preg2.setLocation(0,0);
+        preguntas preg = new preguntas();
+        preguntasLista.add(preg);
+        preg.setSize(340, 662);
+        preg.setLocation(0,0);
         
 
-        content.add(preg2);
+        content.add(preg);
         content.revalidate();
         content.repaint(); 
 
@@ -202,6 +237,7 @@ public class principal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new principal().setVisible(true);
+                
             }
         });
     }

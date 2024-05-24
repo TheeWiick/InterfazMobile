@@ -1,43 +1,36 @@
 package clases;
 import java.awt.Dimension;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class preguntas extends javax.swing.JPanel {
 
-    /**
-     * @param pregunta the pregunta to set
-     */
-    public void setPregunta(javax.swing.JTextField pregunta) {
-        this.pregunta = pregunta;
+public principal padre;    
+    
+    //SET
+    
+    public void setPregunta(String pregunta) {
+        this.pregunta.setText(pregunta);
     }
 
-    /**
-     * @param respuesta0 the respuesta0 to set
-     */
-    public void setRespuesta0(javax.swing.JTextField respuesta0) {
-        this.respuesta0 = respuesta0;
+    public void setRespuesta0(String respuesta0) {
+        this.respuesta0.setText(respuesta0);
     }
 
-    /**
-     * @param respuesta1 the respuesta1 to set
-     */
-    public void setRespuesta1(javax.swing.JTextField respuesta1) {
-        this.respuesta1 = respuesta1;
+    public void setRespuesta1(String respuesta1) {
+        this.respuesta1.setText(respuesta1);
     }
 
-    /**
-     * @param respuesta2 the respuesta2 to set
-     */
-    public void setRespuesta2(javax.swing.JTextField respuesta2) {
-        this.respuesta2 = respuesta2;
+    public void setRespuesta2(String respuesta2) {
+        this.respuesta2.setText(respuesta2);
     }
 
-    /**
-     * @param respuesta3 the respuesta3 to set
-     */
-    public void setRespuesta3(javax.swing.JTextField respuesta3) {
-        this.respuesta3 = respuesta3;
+    public void setRespuesta3(String respuesta3) {
+        this.respuesta3.setText(respuesta3);
     }
 
+    //GET
+    
     public String getPregunta() {
         return pregunta.getText();
     }
@@ -58,16 +51,18 @@ public class preguntas extends javax.swing.JPanel {
         return respuesta3.getText();
     }
 
+
     
     public preguntas() {
         initComponents();
-
+        
         Dimension dimension = new Dimension(335,195);
         utilidades.SetImageLabel(fondo, "src/imagenes/Panel_Principal.png", dimension); 
         
         Dimension dimensionmenos = new Dimension(10,10);
         utilidades.SetImageLabel(menos, "src/imagenes/Menos_Off.png", dimensionmenos);
     }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -248,6 +243,11 @@ public class preguntas extends javax.swing.JPanel {
 
         menos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Menos_Off.png"))); // NOI18N
         menos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menosMouseClicked(evt);
+            }
+        });
         jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 10, 10, 10));
 
         preguntatxt.setBackground(new java.awt.Color(247, 247, 247));
@@ -273,6 +273,15 @@ public class preguntas extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menosMouseClicked
+        padre.borrarPaneles(this);
+        
+        
+//        content.remove(preg);
+//        content.revalidate();
+//        content.repaint();
+    }//GEN-LAST:event_menosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

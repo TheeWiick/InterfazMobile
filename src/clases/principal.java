@@ -6,54 +6,86 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+import javax.swing.JPanel;
 
 
 public class principal extends javax.swing.JFrame {
     public ArrayList <preguntas> preguntasLista = new ArrayList<>(); 
-    
-    
+
     
     public principal() {
-        initComponents();       
+        initComponents();              
         
+        generarPaneles();
         utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
         utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
         utilidades.SetImageLabel(info, "src/imagenes/Info_Off.png");
-        utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");    
+        utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");  
+        
+        
+        
+        DebugMessage debugMessage = new DebugMessage();
+
+        
+        debugMessage.showMessage("error", "No se encontró el archivo de preguntas");
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+        }
+
+        debugMessage.showMessage("warning", "Este simulador no tiene preguntas");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+        }
+
+        debugMessage.showMessage("confirmation", "Las preguntas han sido cargadas con éxito");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+        }
+
+        debugMessage.showMessage("log", "Pregunta añadida (actualmente X)"); 
     }
 
 
-    public void generarPaneles(JTextField[] textFields) {
+    public void generarPaneles() {
         String archivoCSV = "src/archivoscsv/archivo.csv";
 
         try (BufferedReader br = new BufferedReader(new FileReader(archivoCSV))) {
             String line;
-            int indice = 0;
-            while ((line = br.readLine()) != null && indice < textFields.length) {
-                String[] datos = line.split(",");
+            while ((line = br.readLine()) != null) {
+                String[] datos = line.split(",", 5);
                 preguntas preg = new preguntas();
-//                preg.setPregunta(pregunta);
                 preguntasLista.add(preg);
                 preg.setSize(340, 662);
                 preg.setLocation(0,0);
-
+                
+                preg.padre = this;
+                
+                preg.setPregunta(datos[0]);
+                preg.setRespuesta0(datos[1]);
+                preg.setRespuesta1(datos[2]);
+                preg.setRespuesta2(datos[3]);
+                preg.setRespuesta3(datos[4]);
+                
                 content.add(preg);
                 content.revalidate();
                 content.repaint(); 
-                if (datos.length >= 4) {
-                    textFields[indice].setText(datos[0]);
-                    textFields[indice + 1].setText(datos[1]);
-                    textFields[indice + 2].setText(datos[2]);
-                    textFields[indice + 3].setText(datos[3]);
-                    textFields[indice + 4].setText(datos[4]);
-                    indice += 5;
-                }
             }
         } catch (IOException e) {
-            e.printStackTrace();
         }    
-    }  
+    }
+    
+    
+    public void borrarPaneles(preguntas panel){
+        preguntasLista.remove(panel);
+        content.remove(panel);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -198,7 +230,7 @@ public class principal extends javax.swing.JFrame {
         preguntasLista.add(preg);
         preg.setSize(340, 662);
         preg.setLocation(0,0);
-        
+        preg.padre = this;
 
         content.add(preg);
         content.revalidate();

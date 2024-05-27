@@ -16,6 +16,7 @@ public class principal extends javax.swing.JFrame {
     public principal() {
         initComponents();              
         
+        
         generarPaneles();
         utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
         utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
@@ -23,29 +24,6 @@ public class principal extends javax.swing.JFrame {
         utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");  
         
         
-        
-        DebugMessage debugMessage = new DebugMessage();
-
-        
-        debugMessage.showMessage("error", "No se encontró el archivo de preguntas");
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-        }
-
-        debugMessage.showMessage("warning", "Este simulador no tiene preguntas");
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-        }
-
-        debugMessage.showMessage("confirmation", "Las preguntas han sido cargadas con éxito");
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-        }
-
-        debugMessage.showMessage("log", "Pregunta añadida (actualmente X)"); 
     }
 
 
@@ -99,6 +77,7 @@ public class principal extends javax.swing.JFrame {
         info = new javax.swing.JLabel();
         creartxt = new javax.swing.JLabel();
         crear = new javax.swing.JLabel();
+        debug = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -163,6 +142,9 @@ public class principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 843, 340, 50));
+
+        debug.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(debug, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 900, 340, 20));
 
         content.setBackground(new java.awt.Color(5, 19, 36));
         content.setForeground(new java.awt.Color(60, 63, 65));
@@ -279,6 +261,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JLabel crear;
     private javax.swing.JLabel creartxt;
+    private javax.swing.JLabel debug;
     private javax.swing.JLabel desplegable;
     private javax.swing.JLabel info;
     private javax.swing.JPanel jPanel1;

@@ -1,12 +1,12 @@
 package clases;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 
 public class principal extends javax.swing.JFrame {
@@ -24,6 +24,50 @@ public class principal extends javax.swing.JFrame {
         utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");  
         
         
+        String[] messages = {
+            "No se encontró el archivo de preguntas",
+            "Error en la estructura del archivo de preguntas",
+            "Algunas preguntas están vacías",
+            "No se pudo crear el archivo de preguntas",
+            "Este simulador no tiene preguntas",
+            "Las preguntas se guardaron, pero no se pudo comprimir el simulador",
+            "Las preguntas han sido cargadas con éxito",
+            "Las preguntas han sido guardadas (X en total)",
+            "Las preguntas se guardaron y se exportó el simulador en: X/X.zip",
+            "Pregunta añadida",
+            "Pregunta eliminada"
+        };
+
+        Color[] colors = {
+            new Color(0xEB4151), // rojo
+            new Color(0xEB4151), // rojo
+            new Color(0xEB4151), // rojo
+            new Color(0xEB4151), // rojo
+            new Color(0xFF9C00), // amarillo
+            new Color(0xFF9C00), // amarillo
+            new Color(0x86D295), // verde
+            new Color(0x86D295), // verde
+            new Color(0x86D295), // verde
+            new Color(0xF7F7F7), // blanco
+            new Color(0xF7F7F7)  // blanco
+        };
+
+        int[] durations = {
+            3000, // 3 segundos
+            3000, // 3 segundos
+            3000, // 3 segundos
+            3000, // 3 segundos
+            2000, // 2 segundos
+            2000, // 2 segundos
+            2000, // 2 segundos
+            2000, // 2 segundos
+            2000, // 2 segundos
+            1000, // 1 segundo
+            1000  // 1 segundo
+        };
+
+        debugLabel.showMessages(messages, colors, durations);
+
     }
 
 
@@ -77,7 +121,7 @@ public class principal extends javax.swing.JFrame {
         info = new javax.swing.JLabel();
         creartxt = new javax.swing.JLabel();
         crear = new javax.swing.JLabel();
-        debug = new javax.swing.JLabel();
+        debugLabel = new clases.DebugLabel();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -143,8 +187,8 @@ public class principal extends javax.swing.JFrame {
         });
         jPanel1.add(crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 843, 340, 50));
 
-        debug.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(debug, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 900, 340, 20));
+        debugLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(debugLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 900, 340, 20));
 
         content.setBackground(new java.awt.Color(5, 19, 36));
         content.setForeground(new java.awt.Color(60, 63, 65));
@@ -261,7 +305,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JLabel crear;
     private javax.swing.JLabel creartxt;
-    private javax.swing.JLabel debug;
+    private clases.DebugLabel debugLabel;
     private javax.swing.JLabel desplegable;
     private javax.swing.JLabel info;
     private javax.swing.JPanel jPanel1;

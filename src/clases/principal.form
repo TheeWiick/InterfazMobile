@@ -190,7 +190,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="debug">
+        <Component class="clases.DebugLabel" name="debugLabel">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>

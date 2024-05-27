@@ -1,7 +1,6 @@
 package clases;
+
 import java.awt.Dimension;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 public class preguntas extends javax.swing.JPanel {
 

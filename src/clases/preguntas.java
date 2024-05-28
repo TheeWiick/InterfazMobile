@@ -3,8 +3,9 @@ package clases;
 import java.awt.Dimension;
 
 public class preguntas extends javax.swing.JPanel {
+    
+public principal padre;
 
-public principal padre;    
     
     //SET
     
@@ -78,7 +79,7 @@ public principal padre;
         respuesta2panel = new Utilidades.RPanel();
         respuesta3 = new javax.swing.JTextField();
         respuesta3panel = new Utilidades.RPanel();
-        jLabel1 = new javax.swing.JLabel();
+        respuestasincorrectas = new javax.swing.JLabel();
         respuestacorrecta = new javax.swing.JLabel();
         menos = new javax.swing.JLabel();
         preguntatxt = new javax.swing.JLabel();
@@ -229,10 +230,10 @@ public principal padre;
 
         jPanel1.add(respuesta3panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 310, 20));
 
-        jLabel1.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(247, 247, 247));
-        jLabel1.setText("Respustas incorrectas ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 95, -1, 20));
+        respuestasincorrectas.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
+        respuestasincorrectas.setForeground(new java.awt.Color(247, 247, 247));
+        respuestasincorrectas.setText("Respustas incorrectas ");
+        jPanel1.add(respuestasincorrectas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 95, -1, 20));
 
         respuestacorrecta.setBackground(new java.awt.Color(247, 247, 247));
         respuestacorrecta.setFont(new java.awt.Font("Raleway", 0, 12)); // NOI18N
@@ -245,6 +246,12 @@ public principal padre;
         menos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menosMouseExited(evt);
             }
         });
         jPanel1.add(menos, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 10, 10, 10));
@@ -272,20 +279,23 @@ public principal padre;
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void menosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menosMouseClicked
         padre.borrarPaneles(this);
-        
-        
-//        content.remove(preg);
-//        content.revalidate();
-//        content.repaint();
+        padre.showDeleteMessage();
     }//GEN-LAST:event_menosMouseClicked
+
+    private void menosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menosMouseEntered
+        utilidades.SetImageLabel(menos, "src/imagenes/Menos_On.png");
+    }//GEN-LAST:event_menosMouseEntered
+
+    private void menosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menosMouseExited
+        utilidades.SetImageLabel(menos, "src/imagenes/Menos_Off.png");
+    }//GEN-LAST:event_menosMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel menos;
     private javax.swing.JTextField pregunta;
@@ -300,5 +310,6 @@ public principal padre;
     private javax.swing.JTextField respuesta3;
     private Utilidades.RPanel respuesta3panel;
     private javax.swing.JLabel respuestacorrecta;
+    private javax.swing.JLabel respuestasincorrectas;
     // End of variables declaration//GEN-END:variables
 }

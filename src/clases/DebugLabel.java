@@ -24,8 +24,8 @@ public class DebugLabel extends JLabel {
             "Este simulador no tiene preguntas",
             "Las preguntas se guardaron, pero no se pudo comprimir el simulador",
             "Las preguntas han sido cargadas con éxito",
-            "Las preguntas han sido guardadas (X en total)",
-            "Las preguntas se guardaron y se exportó el simulador en: X/X.zip",
+            "Las preguntas han sido guardadas",
+            "Las preguntas se guardaron y se exportó el simulador",
             "Pregunta añadida",
             "Pregunta eliminada"
         };

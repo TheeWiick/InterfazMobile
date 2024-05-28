@@ -1,16 +1,22 @@
 package clases;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 
 public class principal extends javax.swing.JFrame {
-    public ArrayList <preguntas> preguntasLista = new ArrayList<>(); 
+    
+public ArrayList <preguntas> preguntasLista = new ArrayList<>(); 
 
+private Timer timer;    
     
     public principal() {
         initComponents();              
@@ -22,12 +28,27 @@ public class principal extends javax.swing.JFrame {
         utilidades.SetImageLabel(info, "src/imagenes/Info_Off.png");
         utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");  
         
+        timer = new Timer(0, null);
+        timer.setRepeats(false);
         
         debugLabel.showMessages(4);
     }
 
 
-     
+    public void showDeleteMessage() {
+        debugLabel.setText("Pregunta eliminada");
+        debugLabel.setForeground(new Color(0xF7F7F7));
+
+        timer.setInitialDelay(1000);
+        timer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                debugLabel.setText("");
+            }
+        });
+
+        timer.restart();
+    }    
     
     public void generarPaneles() {
         String archivoCSV = "src/archivoscsv/archivo.csv";
@@ -117,11 +138,28 @@ public class principal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 masMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                masMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                masMouseExited(evt);
+            }
         });
         jPanel1.add(mas, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 143, 14, 14));
 
         info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Info_Off.png"))); // NOI18N
         info.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        info.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                infoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                infoMouseExited(evt);
+            }
+        });
         jPanel1.add(info, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 143, 14, 14));
 
         creartxt.setFont(new java.awt.Font("Raleway Medium", 0, 24)); // NOI18N
@@ -202,10 +240,11 @@ public class principal extends javax.swing.JFrame {
 
     writer.close();
 
-    JOptionPane.showMessageDialog(this, "Archivo CSV creado con éxito.");
 } catch (IOException e) {
     JOptionPane.showMessageDialog(this, "Error al crear el archivo CSV: " + e.getMessage());
 }
+       
+       debugLabel.showMessages(6);
     }//GEN-LAST:event_crearMouseClicked
  
     private void masMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masMouseClicked
@@ -222,6 +261,26 @@ public class principal extends javax.swing.JFrame {
 
         debugLabel.showMessages(9);
     }//GEN-LAST:event_masMouseClicked
+
+    private void infoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoMouseClicked
+        
+    }//GEN-LAST:event_infoMouseClicked
+
+    private void masMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masMouseEntered
+        utilidades.SetImageLabel(mas, "src/imagenes/Mas_On.png");
+    }//GEN-LAST:event_masMouseEntered
+
+    private void masMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masMouseExited
+        utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
+    }//GEN-LAST:event_masMouseExited
+
+    private void infoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoMouseEntered
+        utilidades.SetImageLabel(info, "src/imagenes/Info_On.png");
+    }//GEN-LAST:event_infoMouseEntered
+
+    private void infoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_infoMouseExited
+        utilidades.SetImageLabel(info, "src/imagenes/Info_Off.png");
+    }//GEN-LAST:event_infoMouseExited
 
     /**
      * @param args the command line arguments
@@ -272,4 +331,8 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel tipo;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
+
+    private void setText(String pregunta_eliminada) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -55,46 +55,6 @@ import javax.swing.JScrollPane;
 		bufferedReader.close();
             } catch (IOException e) {
         }
-    }
-    
-    
-//    public void actualizarArchivoCSV() throws IOException {
-//        FileWriter writer = new FileWriter("src/archivoscsv/archivo.csv");
-//
-//        for (int i = 0; i < preguntasLista.size(); i++) {
-//            writer.append(String.format("%s,%s,%s,%s,%s\n",
-//                preguntasLista.get(i).getPregunta(),
-//                preguntasLista.get(i).getRespuesta0(),
-//                preguntasLista.get(i).getRespuesta1(),
-//                preguntasLista.get(i).getRespuesta2(),
-//                preguntasLista.get(i).getRespuesta3()
-//            ));
-//        }
-//
-//        writer.close();
-//    }
-    
-//    public JPanel content;
-//    public JFrame JFrame;
-//    public void ScrollPane() {
-//
-//        JScrollPane scrollPane = new JScrollPane(content);
-//        
-////        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-////        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-////
-////        content.add(scrollPane, BorderLayout.CENTER);
-////        content.revalidate();
-////        content.repaint();
-//
-//
-//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-//
-//        // Agregar el JScrollPane al JFrame
-//        JFrame.add(scrollPane, BorderLayout.CENTER);
-//
-//        // Hacer visible el JFrame
-//        JFrame.setVisible(true);      
-//    }    
+    }   
 }
     

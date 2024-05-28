@@ -1,6 +1,5 @@
 package clases;
 
-import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -24,53 +23,12 @@ public class principal extends javax.swing.JFrame {
         utilidades.SetImageLabel(crear, "src/imagenes/Cilindrico_Off.png");  
         
         
-        String[] messages = {
-            "No se encontró el archivo de preguntas",
-            "Error en la estructura del archivo de preguntas",
-            "Algunas preguntas están vacías",
-            "No se pudo crear el archivo de preguntas",
-            "Este simulador no tiene preguntas",
-            "Las preguntas se guardaron, pero no se pudo comprimir el simulador",
-            "Las preguntas han sido cargadas con éxito",
-            "Las preguntas han sido guardadas (X en total)",
-            "Las preguntas se guardaron y se exportó el simulador en: X/X.zip",
-            "Pregunta añadida",
-            "Pregunta eliminada"
-        };
-
-        Color[] colors = {
-            new Color(0xEB4151), // rojo
-            new Color(0xEB4151), // rojo
-            new Color(0xEB4151), // rojo
-            new Color(0xEB4151), // rojo
-            new Color(0xFF9C00), // amarillo
-            new Color(0xFF9C00), // amarillo
-            new Color(0x86D295), // verde
-            new Color(0x86D295), // verde
-            new Color(0x86D295), // verde
-            new Color(0xF7F7F7), // blanco
-            new Color(0xF7F7F7)  // blanco
-        };
-
-        int[] durations = {
-            3000, // 3 segundos
-            3000, // 3 segundos
-            3000, // 3 segundos
-            3000, // 3 segundos
-            2000, // 2 segundos
-            2000, // 2 segundos
-            2000, // 2 segundos
-            2000, // 2 segundos
-            2000, // 2 segundos
-            1000, // 1 segundo
-            1000  // 1 segundo
-        };
-
-        debugLabel.showMessages(messages, colors, durations);
-
+        debugLabel.showMessages(4);
     }
 
 
+     
+    
     public void generarPaneles() {
         String archivoCSV = "src/archivoscsv/archivo.csv";
 
@@ -262,6 +220,7 @@ public class principal extends javax.swing.JFrame {
         content.revalidate();
         content.repaint(); 
 
+        debugLabel.showMessages(9);
     }//GEN-LAST:event_masMouseClicked
 
     /**

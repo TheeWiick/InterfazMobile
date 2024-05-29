@@ -21,7 +21,6 @@ private Timer timer;
     public principal() {
         initComponents();              
         
-        
         generarPaneles();
         utilidades.SetImageLabel(desplegable, "src/imagenes/Desplegable_Off.png");
         utilidades.SetImageLabel(mas, "src/imagenes/Mas_Off.png");
@@ -32,9 +31,11 @@ private Timer timer;
         timer.setRepeats(false);
         
         debugLabel.showMessages(4);
+       
     }
 
-
+    
+    
     public void showDeleteMessage() {
         debugLabel.setText("Pregunta eliminada");
         debugLabel.setForeground(new Color(0xF7F7F7));
@@ -49,6 +50,7 @@ private Timer timer;
 
         timer.restart();
     }    
+    
     
     public void generarPaneles() {
         String archivoCSV = "src/archivoscsv/archivo.csv";
@@ -77,7 +79,6 @@ private Timer timer;
         } catch (IOException e) {
         }    
     }
-    
     
     public void borrarPaneles(preguntas panel){
         preguntasLista.remove(panel);

@@ -8,14 +8,9 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import com.opencsv.CSVWriter;
-import java.awt.BorderLayout;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
-import javax.swing.BoxLayout;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+
 
 
     public class utilidades {
